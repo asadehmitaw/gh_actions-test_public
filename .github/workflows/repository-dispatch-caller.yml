@@ -11,5 +11,5 @@ jobs:
             -H "Accept: application/vnd.github+json" \
             -H "Authorization: $GH_TOKEN" \
             https://api.github.com/repos/asadehmitaw/gh_actions-test_public/dispatches \
-            -d '{"event_type":"run-tests","client_payload":{"env":"staging"}}'
+            -d '{"event_type":"event1","client_payload":{"env":"staging"}}'
           
