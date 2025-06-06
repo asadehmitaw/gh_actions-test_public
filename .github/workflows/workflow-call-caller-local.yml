@@ -1,8 +1,8 @@
-name: On-Workflow-Call-Caller
+name: Workflow-Call-Caller-Local
 on: [push]
 jobs:
   job1:
-    uses: ./.github/workflows/on-workflow-call.yml
+    uses: ./.github/workflows/workflow-call-called.yml
     with:
       foo: foo-value
     secrets:

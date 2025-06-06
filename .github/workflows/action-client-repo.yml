@@ -6,7 +6,7 @@ jobs:
     steps:
       - name: Use action_docker - from another repo
         id: Use_action_docker
-        uses: asadehmitaw/action_docker@main
+        uses: asadehmitaw/gh_actions-action_docker@main
         with:
           name: ber
       - name: Print action_docker output
@@ -15,7 +15,7 @@ jobs:
           echo "${{ steps.Use_action_docker.outputs.greeting }}"
       - name: Use action_composite - from another repo
         id: Use_action_composite
-        uses: asadehmitaw/action_composite@main
+        uses: asadehmitaw/gh_actions-action_composite@main
         with:
           name: ber
       - name: Print action_composite output
