@@ -22,3 +22,12 @@ jobs:
         run: |
           echo "Greeting output:"
           echo "${{ steps.Use_action_composite.outputs.greeting }}"
+      - name: Use action_javascript - from another repo
+        id: Use_action_javascript
+        uses: asadehmitaw/gh_actions-action_javascript@main
+        with:
+          name: ber
+      - name: Print action_javascript output
+        run: |
+          echo "Greeting output:"
+          echo "${{ steps.Use_action_javascript.outputs.greeting }}"
