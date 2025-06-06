@@ -7,6 +7,6 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - name: Print input values
+      - name: Printing client payload
         run: |
-          echo "Name: ${{ toJson(github.event.client_payload) }}"
+          echo "${{ toJson(github.event.client_payload) }}"
