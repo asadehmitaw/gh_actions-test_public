@@ -8,3 +8,4 @@ jobs:
       - name: Print input values
         run: |
           echo "Name: ${{ toJson(github.event.client_payload) }}"
+          
