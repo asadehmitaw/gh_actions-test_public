@@ -1,0 +1,20 @@
+name: Concurrency-2
+on: push
+concurrency:
+  group: ${{ github.repository }}-${{ github.ref }}
+  cancel-in-progress: false
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.repository }}-${{ github.ref }}-${{ github.workflow }}
+      cancel-in-progress: false
+    steps:
+      - run: sleep 1m
+  job2:
+    runs-on: ubuntu-latest
+    concurrency:
+      group: ${{ github.repository }}-${{ github.ref }}-${{ github.workflow }}
+      cancel-in-progress: false
+    steps:
+      - run: sleep 1m

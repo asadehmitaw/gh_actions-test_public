@@ -1,0 +1,25 @@
+name: Env-Vars
+run-name: Env-Vars
+on: [push]
+jobs:
+  Job1:
+    env:
+      foo: foo_value
+    runs-on: ubuntu-latest
+    steps:
+      - name: Add to Env
+        run: echo bar=bar-value >> $GITHUB_ENV
+      - name: Print GITHUB_ENV file
+        run: echo $GITHUB_ENV
+      - name: Print foo 1
+        run: echo $foo
+      - name: Print foo 2
+        run: echo ${{ env.foo }}
+      - name: Print bar 1
+        run: echo $bar
+      - name: Print bar 2
+        run: echo ${{ env.bar }}
+      - name: List env variables 1
+        run: env
+      - name: List env variables 2
+        run: echo "${{ toJson(env) }}"

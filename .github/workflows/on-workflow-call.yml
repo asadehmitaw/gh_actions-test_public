@@ -1,0 +1,23 @@
+name: On-Workflow-Call
+on:
+  workflow_call:
+    inputs:
+      foo:
+        description: a foo
+        required: true
+        type: string
+    secrets:
+      bar:
+        description: a bar
+        required: true
+    outputs:
+      output1:
+        value: "foo-bar-!!"
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          echo "input foo is ${{ inputs.foo }}"
+          echo "secret bar is ${{ secrets.bar }}"
+          

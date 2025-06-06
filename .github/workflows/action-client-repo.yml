@@ -1,0 +1,24 @@
+name: Action-Client-Repo
+on: [push]
+jobs:
+  Action-User-Job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Use action_docker - from another repo
+        id: Use_action_docker
+        uses: asadehmitaw/action_docker@main
+        with:
+          name: ber
+      - name: Print action_docker output
+        run: |
+          echo "Greeting output:"
+          echo "${{ steps.Use_action_docker.outputs.greeting }}"
+      - name: Use action_composite - from another repo
+        id: Use_action_composite
+        uses: asadehmitaw/action_composite@main
+        with:
+          name: ber
+      - name: Print action_composite output
+        run: |
+          echo "Greeting output:"
+          echo "${{ steps.Use_action_composite.outputs.greeting }}"

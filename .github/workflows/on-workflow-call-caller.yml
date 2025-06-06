@@ -1,0 +1,16 @@
+name: On-Workflow-Call-Caller
+on: [push]
+jobs:
+  job1:
+    uses: ./.github/workflows/on-workflow-call.yml
+    with:
+      foo: foo-value
+    secrets:
+      bar: var-value
+  job2:
+    runs-on: ubuntu-latest
+    needs: job1
+    steps:
+      - run: |
+          echo "Got output: ${{ needs.job1.outputs.output1 }}"
+          

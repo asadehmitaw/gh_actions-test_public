@@ -1,0 +1,12 @@
+name: Groups
+run-name: Groups
+on:
+  push:
+jobs:
+  Groups-Job:
+    runs-on:
+      group: group1
+    steps:
+      - run: echo "runner is ${{ toJson(runner) }}"
+
+          

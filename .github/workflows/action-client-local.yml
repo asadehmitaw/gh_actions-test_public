@@ -1,0 +1,16 @@
+name: Action-Client-Local
+on: [push]
+jobs:
+  Action-User-Job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+      - name: Use action1 - from local directory
+        id: Use_local_action1
+        uses: ./.github/actions/action1
+        with:
+          name: ber4
+      - name: Print action1 output
+        run: echo ${{ steps.Use_local_action1.outputs.greeting }}
+      

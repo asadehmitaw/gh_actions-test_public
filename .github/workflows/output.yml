@@ -1,0 +1,18 @@
+name: Output
+run-name: Output
+on: [push]
+jobs:
+  Action-User-Job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set output
+        id: Set_output
+        run: |
+          echo "foo=foo1" >> "$GITHUB_OUTPUT"
+          echo "bar=bar1" >> "$GITHUB_OUTPUT"
+      - name: Print GITHUB_OUTPUT file
+        run: echo $GITHUB_OUTPUT
+      - name: Print first step outputs
+        run: |
+          echo ${{ steps.Set_output.outputs.foo }}
+          echo ${{ steps.Set_output.outputs.bar }}

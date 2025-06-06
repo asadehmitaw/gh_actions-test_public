@@ -1,0 +1,11 @@
+name: Config-Vars
+run-name: Config-Vars
+on: [push]
+jobs:
+  Job1:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print bar
+        run: echo "${{ vars.BAR }}"
+      - name: List configuration variables
+        run: echo "${{ toJson(vars) }}"

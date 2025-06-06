@@ -1,0 +1,14 @@
+inputs:
+  name:
+    description: 'Name'
+    required: true
+outputs:
+  greeting:
+    description: "Greeting"
+    value: ${{ steps.greeter.outputs.greeting }}
+runs:
+  using: "composite"
+  steps:
+    - id: greeter
+      run: echo "greeting='Hi, ${{ inputs.name }}!'" >> $GITHUB_OUTPUT
+      shell: bash

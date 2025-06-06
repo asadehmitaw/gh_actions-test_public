@@ -1,0 +1,26 @@
+name: GitHub Actions Demo
+run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
+on:
+  push:
+    branches-ignore: ["!main"]
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - run: echo "github.event_name is ${{ github.event_name }}"
+      - run: echo "runner.os is ${{ runner.os }}"
+      - run: echo "github.ref is ${{ github.ref }}"
+      - run: echo "GITHUB_REF is $GITHUB_REF"
+      - run: echo "github.sha is ${{ github.sha }}"
+      - run: echo "GITHUB_SHA  is $GITHUB_SHA"
+      - run: echo "github.repository is ${{ github.repository }}"
+      - run: echo "github.workspace is ${{ github.workspace }}"
+      - run: echo "secrets.GITHUB_TOKEN is ${GH_TOKEN:0:5}"
+      - run: echo "job.status is ${{ job.status }}"
+      - name: List files in the repository
+        run: |
+          ls ${{ github.workspace }}
+
+          
