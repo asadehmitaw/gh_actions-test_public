@@ -1,0 +1,16 @@
+name: Defaults-Workflow-Level
+on: push
+defaults:
+  run:
+    working-directory: .github
+    shell: shell
+jobs:
+  job1:
+    runs-on: ubuntu-latest
+    steps:
+      - run: pwd
+  job2:
+    runs-on: ubuntu-latest
+    steps:
+      - run: pwd
+      
