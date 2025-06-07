@@ -4,9 +4,9 @@ jobs:
   job1:
     uses: asadehmitaw/gh_actions-reusable-workflows/.github/workflows/on-workflow-call.yml@main
     with:
-      foo: foo-value
+      foo: foo2
     secrets:
-      bar: var-value
+      bar: bar2
   job2:
     runs-on: ubuntu-latest
     needs: job1

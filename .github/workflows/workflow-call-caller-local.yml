@@ -4,9 +4,9 @@ jobs:
   job1:
     uses: ./.github/workflows/workflow-call-called.yml
     with:
-      foo: foo-value
+      foo: foo1
     secrets:
-      bar: var-value
+      bar: bar1
   job2:
     runs-on: ubuntu-latest
     needs: job1

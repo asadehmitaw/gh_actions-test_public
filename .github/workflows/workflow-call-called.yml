@@ -12,7 +12,7 @@ on:
         required: true
     outputs:
       output1:
-        value: "foo-bar-!!"
+        value: ${{ jobs.job1.result }}
 jobs:
   job1:
     runs-on: ubuntu-latest
