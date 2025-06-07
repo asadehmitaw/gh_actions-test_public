@@ -4,4 +4,4 @@ jobs:
   job1:
     runs-on: self-hosted
     steps:
-      - run: echo 'my second Self-Hosted runner!'
+      - run: echo 'my Self-Hosted runner 3!'
