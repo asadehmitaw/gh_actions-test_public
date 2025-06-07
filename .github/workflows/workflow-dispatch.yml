@@ -6,6 +6,10 @@ on:
         description: "input1 desc"
         required: true
         type: string
+      input2:
+        description: "input2 desc"
+        required: true
+        type: environment
 jobs:
   Triggered-Job:
     runs-on: ubuntu-latest
