@@ -12,12 +12,15 @@ on:
         required: true
     outputs:
       output1:
-        value: ${{ jobs.job1.result }}
+        value: ${{ jobs.job1.outputs.output1 }}
 jobs:
   job1:
     runs-on: ubuntu-latest
+    outputs:
+      output1: ${{ steps.step1.outputs.output1 }}
     steps:
-      - run: |
+      - id: step1
+        run: |
           echo "input foo is ${{ inputs.foo }}"
           echo "secret bar is ${{ secrets.bar }}"
           echo "output1='input foo is ${{ inputs.foo }} and secret bat is ${{ secrets.bar }}'" >> $GITHUB_OUTPUT
