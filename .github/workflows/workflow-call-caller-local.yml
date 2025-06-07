@@ -12,5 +12,5 @@ jobs:
     needs: job1
     steps:
       - run: |
-          echo "workflow output 4: ${{ needs.job1.outputs.output1 }}"
+          echo "workflow output 5: ${{ needs.job1.outputs.output1 }}"
           
