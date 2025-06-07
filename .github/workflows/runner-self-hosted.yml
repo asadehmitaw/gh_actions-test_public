@@ -1,0 +1,7 @@
+name: Runner-Self-Hosted
+on: push
+jobs:
+  job1:
+    runs-on: self-hosted
+    steps:
+      - run: echo 'my first Self-Hosted runner!'
