@@ -26,4 +26,4 @@ jobs:
         run: |
           echo "input foo is $FOO"
           echo "secret bar is $BAR"
-          echo "output1=foo is $FOO and bar is $BAR" >> $GITHUB_OUTPUT
+          echo "output1=foo" >> $GITHUB_OUTPUT
