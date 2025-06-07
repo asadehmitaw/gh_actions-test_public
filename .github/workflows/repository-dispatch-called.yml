@@ -3,10 +3,12 @@ on:
   repository_dispatch:
     types:
       - event1
+      - event2
 jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - name: Printing client payload
+      - name: Printing event type and client payload
         run: |
-          echo "${{ toJson(github.event.client_payload) }}"
+          echo "event type is ${{ github.event.action }}"
+          echo "payload is ${{ toJson(github.event.client_payload) }}"
