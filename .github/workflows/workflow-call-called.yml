@@ -23,5 +23,7 @@ jobs:
         run: |
           echo "input foo is ${{ inputs.foo }}"
           echo "secret bar is ${{ secrets.bar }}"
-          echo "output1=input foo is ${{ inputs.foo }} and secret bat is ${{ secrets.bar }}" >> $GITHUB_OUTPUT
-          
+          echo "output1=input foo is $FOO and secret bar is $BAR" >> $GITHUB_OUTPUT
+        env:
+          FOO: ${{ inputs.foo }}
+          BAR: ${{ secrets.bar }}
