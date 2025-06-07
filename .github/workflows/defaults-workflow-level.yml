@@ -8,9 +8,8 @@ jobs:
   job1:
     runs-on: ubuntu-latest
     steps:
-      - run: pwd
+      - run: echo $PWD
   job2:
     runs-on: ubuntu-latest
     steps:
-      - run: pwd
-      
+      - run: echo $PWD
