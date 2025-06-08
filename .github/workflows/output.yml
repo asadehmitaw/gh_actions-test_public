@@ -15,4 +15,5 @@ jobs:
       - name: Print first step outputs
         run: |
           echo ${{ steps.Set_output.outputs.foo }}
-          echo $steps.Set_output.outputs.bar
+          echo $GITHUB_OUTPUT
+        #$steps.Set_output.outputs.bar
