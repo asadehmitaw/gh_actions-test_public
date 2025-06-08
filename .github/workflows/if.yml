@@ -8,5 +8,5 @@ jobs:
         id: step1
         run: exit 1
       - name: step2
-        if: always() && steps.step1.outcome == 'failure'
+        if: failure() && steps.step1.outcome == 'failure'
         run: echo 'step1 outcome is ' ${{ steps.step1.outcome }}
