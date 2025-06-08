@@ -6,6 +6,6 @@ jobs:
     steps:
       - name: step1
         id: step1
-        run: exit 0
+        run: exit 1
       - name: step2
         run: echo 'step1 outcome is ' ${{ steps.step1.outcome }}
