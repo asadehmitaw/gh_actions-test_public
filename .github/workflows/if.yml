@@ -1,0 +1,11 @@
+name: If
+on: [push]
+jobs:
+  Action-User-Job:
+    runs-on: ubuntu-latest
+    steps:
+      - name: step1
+        id: step1
+        run: exit 0
+      - name: step2
+        run: echo 'step1 outcome is ' ${{ steps.step1.outcome }}
